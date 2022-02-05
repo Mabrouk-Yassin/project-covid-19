@@ -22,16 +22,6 @@ La page d’accueil, donne une vue générale de ce que le platform offre comme 
  	* Modifier analyse selon le Code d’analyse.
 ### Se déconnecter : fermer la session.
 
-## Diagrammes de cas d'utilisation :
-Il permet d'identifier les possibilités d'interaction entre le système et les acteurs (intervenants extérieurs au système), c'est-à-dire toutes les fonctionnalités que doit fournir le système, il permet aussi de classer les acteurs et structurer les objectifs du système (besoins).
-
-![image](https://user-images.githubusercontent.com/81876011/152662071-deadc593-40e7-438a-9834-3ec55ac14fe1.png)
-
-## Diagramme de classes :
-
-![image](https://user-images.githubusercontent.com/81876011/152662104-bcefafda-77d2-4956-8d4d-e9d3e6c67f73.png)
-
-
 ## Schéma de la plateforme :
 
 ![image](https://user-images.githubusercontent.com/81876011/152662126-5d2d0dc5-ce90-4098-ac11-e13f095b7657.png)
@@ -63,13 +53,17 @@ Cette page permet de voir les patients ajoutés ainsi que d’ajouter un nouveau
 
 ![image](https://user-images.githubusercontent.com/81876011/152662221-251c2cb7-5c85-4576-9486-53afb828b24e.png)
 
-* Ce formulaire permet d'ajouter un patient :
+* Page ajouter patient :
+
+Ce formulaire permet d'ajouter un patient :
 
 ![image](https://user-images.githubusercontent.com/81876011/152662317-3c758cf6-e201-4a7e-ab6a-6958a1340110.png)
 
 ![image](https://user-images.githubusercontent.com/81876011/152662319-caa08806-a898-46de-90df-6f2bc49652d1.png)
 
-* Ce formulaire permet d'ajouter un patient proche :
+* Page ajouter patient proche 
+
+Ce formulaire permet d'ajouter un patient proche :
 
 ![image](https://user-images.githubusercontent.com/81876011/152662335-f78e42a8-fb93-4510-b992-d2d2c1f8020d.png)
 
