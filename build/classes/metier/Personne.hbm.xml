@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+      <class name="metier.Personne" table="personne" discriminator-value="Personne" >
+         	<id name="CINpr" column="CINpr"> <generator class="assigned"/> </id> 
+            <discriminator column="DTYPE" type="string" />
+			<property name="Nom" column="Nom" /> 
+			<property name="Prenom" column="Prenom"/>
+			<property name="DateNaissance" column="DateNaissance"/>  
+			<property name="Adresse" column="Adresse" /> 
+			<property name="Sexe" column="Sexe"/>
+			<property name="Telephone" column="Telephone"/> 
+			
+		    <component name="localisation" class="metier.Localisation">
+				<property name="Region" column="Region"/> 
+				<property name="Ville" column="Ville"/>
+				<property name="District" column="District" /> 
+			 </component> 
+			 
+			 	<subclass name="metier.Patient"	 discriminator-value ="Patient"> 			 	 
+					<join table="Patient" fetch="select" > 		
+					<key column="CINpr" />
+					<property name="EtatPatient" column="EtatPatient"/> 
+				    <property name="TypeCas" column="TypeCas"/>  	  
+				    </join>	
+				    
+				        
+				     	     	    	      
+			 </subclass> 
+			 <subclass name="metier.PatientProche"	 discriminator-value ="PatientProche">
+			  
+	        	<join table="PatientProche" fetch="select" >
+					<key column="CINp" />	  
+					 <property name="Relation" column="Relation"/> 
+					 <many-to-one name="patient" class="Patient" column="CINpr"/>
+			   </join>	 	      
+			 </subclass> 
+	 	 
+			  
+      </class>
+</hibernate-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

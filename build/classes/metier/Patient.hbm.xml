@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+      <class name="metier.Patient" table="Patient"  >
+         	<id name="CINpr" column="CINpr"> <generator class="assigned"/> </id> 
+			<property name="Nom" column="Nom" /> 
+			<property name="Prenom" column="Prenom"/>
+			<property name="DateNaissance" column="DateNaissance"/>  
+			<property name="Adresse" column="Adresse" /> 
+			<property name="Sexe" column="Sexe"/>
+			<property name="Telephone" column="Telephone"/> 
+		    <component name="localisation" class="metier.Localisation">
+				<property name="Region" column="Region"/> 
+				<property name="Ville" column="Ville"/>
+				<property name="District" column="District" /> 
+			 </component> 
+			<property name="EtatPatient" column="EtatPatient"/> 
+		    <property name="TypeCas" column="TypeCas"/>  	
+		    <set name="PatientProche">
+			<key column="CINpr"/>
+			<one-to-many class="metier.PatientProche"/>
+		   </set>
+			
+		   <many-to-one name="hopital" column="idH"/>			  
+				  
+      </class>
+</hibernate-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

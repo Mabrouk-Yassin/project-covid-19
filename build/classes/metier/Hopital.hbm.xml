@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+      <class name="metier.Hopital" table="Hopital"  >
+         	<id name="idH" column="idH"> <generator class="increment"/> </id> 
+			<property name="NomHopital" column="NomHopital" /> 
+			<property name="DateEntrer" column="DateEntrer"/>
+			<property name="DateSortir" column="DateSortir"/>  
+			<property name="DateDeces" column="DateDeces" /> 
+			<property name="Tel" column="Tel"/>
+			<property name="CINp" column="CINp"/> 
+		    <property name="Addresse" column="Addresse"/> 
+			 <set name="patien">
+			<key column="idH"/>
+			<one-to-many class="metier.Patient"/>
+		   </set>
+				  
+      </class>
+</hibernate-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="false" />
+
+	<package name="web"  namespace="/" extends="struts-default">
+       
+        <!-- Action de l'action de réference -->   
+        <default-action-ref name="login"/> 
+        
+        <action name="login">
+          <result>/login.jsp</result>
+        </action>
+        <action name="validerlogin" class="web.ServiceAction"   method="login">
+            <result name="success" >/Accueil.jsp</result>
+            <result name="input">/login.jsp</result> 
+            <result name="error">/login.jsp</result> 
+        </action>
+        
+        <action name="inscription">
+            <result>/inscription.jsp</result>
+        </action>
+        <action name="validerinscription" class="web.ServiceAction"    method="inscription">
+            <result name="success" >/login.jsp</result>
+            <result name="input">/inscription.jsp</result> 
+            <result name="error">/inscription.jsp</result> 
+        </action>
+        
+        
+        <action name="Accueil" >
+            <result>/Accueil.jsp</result> 
+        </action>
+        
+         <action name="AjouterPatient1" >
+            <result>/AjouterPatient1.jsp</result> 
+        </action>
+        
+        <action name="validerAjouterPatient1" class="web.ServiceAction" method="AjouterPatient1">
+            <result name="success" >/AjouterPatient2.jsp</result>
+            <result name="input">/AjouterPatient1.jsp</result> 
+            <result name="error">/AjouterPatient1.jsp</result> 
+        </action>
+        
+        <action name="AjouterPatient2" >
+            <result>/AjouterPatient2.jsp</result> 
+        </action>
+        
+        <action name="validerAjouterPatient2" class="web.ServiceAction" method="AjouterPatient2">
+            <result name="success" >/AjouterPatient3.jsp</result>
+            <result name="input">/AjouterPatient2.jsp</result> 
+            <result name="error">/AjouterPatient2.jsp</result> 
+        </action>
+        
+         <action name="AjouterPatient3" >
+            <result>/AjouterPatient3.jsp</result> 
+        </action>
+        
+        <action name="validerAjouterPatient3" class="web.ServiceAction" method="AjouterPatient3">
+            <result name="success" >/AjouterPatient3.jsp</result>
+            <result name="input">/AjouterPatient3.jsp</result> 
+            <result name="error">/AjouterPatient3.jsp</result> 
+        </action>
+        
+         <action name="UpdatePatient" >
+            <result>/UpdatePatient.jsp</result> 
+        </action>
+        
+        <action name="validerUpdatePatient" class="web.ServiceAction" method="UpdatePatient">
+            <result name="success" >/listerPatient.jsp</result> 
+             <result name="input">/UpdatePatient.jsp</result>     
+            <result name="error">/UpdatePatient.jsp</result> 
+        </action>
+        
+        
+          <action name="RecherchPatient" >
+            <result>/RecherchPatient.jsp</result> 
+        </action>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        <action name="listerPatient" class="web.ServiceAction"  method="getPatient" >
+            <result>/listerPatient.jsp</result>
+        </action>
+        
+         
+        <action name="pageUpdate" class="web.ServiceAction"  method="pageupdatePatient" >
+             <result name="success" >/UpdatePatient.jsp</result>
+             <result name="input">/listerPatient.jsp</result> 
+            <result name="error">/listerPatient.jsp</result> 
+        </action>
+        
+        <action name="DeletePatient" class="web.ServiceAction"  method="DeletePatient" >
+             <result name="success" >/listerPatient.jsp</result>
+               <result name="input">/listerPatient.jsp</result> 
+            <result name="error">/listerPatient.jsp</result> 
+        </action>
+        
+        <action name="Deletehopital" class="web.ServiceAction"  method="Deletehopital" >
+               <result name="success" >/listerHopital.jsp</result>
+               <result name="input">/listerHopital.jsp</result> 
+               <result name="error">/listerHopital.jsp</result> 
+        </action>
+             
+        <action name="AjouterHopital" class="web.ServiceAction"  method="pageAjouterHopital" >
+              <result>/Ajouterhopital.jsp</result> 
+        </action>
+        <action name="validerAjouterHopital" class="web.ServiceAction" method="AjouterHopital">
+            <result name="success" >/listerHopital.jsp</result>
+            <result name="input">/Ajouterhopital.jsp</result> 
+            <result name="error">/Ajouterhopital.jsp</result> 
+        </action>
+        
+        <action name="listerHopital" class="web.ServiceAction"  method="getHopital">
+            <result>/listerHopital.jsp</result>
+        </action>
+        
+         <action name="Updatehopital"  >
+            <result>/modifierhopital.jsp</result>
+        </action>
+          <action name="validerUpdateHopital" class="web.ServiceAction" method="UpdateHopital">
+            <result name="success" >/listerHopital.jsp</result> 
+             <result name="input">/modifierhopital.jsp</result>     
+            <result name="error">/modifierhopital.jsp</result> 
+        </action>
+           
+        <action name="pageUpdatehopital" class="web.ServiceAction"  method="pageUpdatehopital" >
+             <result name="success" >/modifierhopital.jsp</result>
+             <result name="input">/listerHopital.jsp</result> 
+            <result name="error">/listerHopital.jsp</result> 
+        </action>
+      
+     
+         
+ 	</package>   
+ </struts>   
+    

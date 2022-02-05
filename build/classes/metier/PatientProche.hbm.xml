@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+      <class name="metier.PatientProche" table="PatientProche">
+      	<id name="CINp" column="CINp"> <generator class="assigned"/> </id>
+			 <property name="Relation" column="Relation"/> 
+			 <many-to-one name="patient" column="CINpr"/>	 
+      </class>
+</hibernate-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
